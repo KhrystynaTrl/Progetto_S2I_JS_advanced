@@ -1,0 +1,35 @@
+{
+  "name": "progetto_s2i_js_advanced",
+  "version": "1.0.0",
+  "description": "Progetto finale del corso javascript advanced",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhrystynaTrl/Progetto_S2I_JS_advanced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KhrystynaTrl/Progetto_S2I_JS_advanced/issues"
+  },
+  "homepage": "https://github.com/KhrystynaTrl/Progetto_S2I_JS_advanced#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.6.3"
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "sass": "^1.89.2",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}
