@@ -19,6 +19,9 @@ async function showTenNews(ids) {
       break;
     }
     let news = await getNews(id);
+    if (!news.url) {
+      continue;
+    }
     tenNewsArray.push(news);
   }
   return tenNewsArray;
