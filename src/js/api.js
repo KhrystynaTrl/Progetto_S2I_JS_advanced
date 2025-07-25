@@ -12,13 +12,14 @@ async function getNews(id) {
   return news.data;
 }
 
+let i = 0;
 async function showTenNews(ids) {
   let tenNewsArray = [];
-  for (let id of ids) {
+  for (i; i < ids.length; i++) {
     if (tenNewsArray.length == 10) {
       break;
     }
-    let news = await getNews(id);
+    let news = await getNews(ids[i]);
     if (!news.url) {
       continue;
     }

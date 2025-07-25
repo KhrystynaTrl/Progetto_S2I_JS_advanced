@@ -1,10 +1,11 @@
 require("./scss/index.scss");
 const api = require("./js/api.js");
-
+const IDS = [];
+const buttonLoadMore = document.getElementById("buttonLoadMore");
 async function start() {
-  let resultAllNews = await api.getAllNews();
+  IDS.push(...(await api.getAllNews()));
 
-  let tenNews = await api.showTenNews(resultAllNews);
+  let tenNews = await api.showTenNews(IDS);
 
   for (let news of tenNews) {
     createItem(news);
@@ -41,18 +42,16 @@ function createItem(news) {
   let p = document.createElement("p");
   p.classList = "mb-1";
 
-  if (news.url) {
-    let a = document.createElement("a");
-    a.classList = "linkNews";
-    a.target = "_blank";
-    a.href = news.url;
-    a.innerText = news.url;
+  let a = document.createElement("a");
+  a.classList = "linkNews";
+  a.target = "_blank";
+  a.href = news.url;
+  a.innerText = news.url;
 
-    divListGroupItem.addEventListener("click", () =>
-      window.open(news.url, "_blank")
-    );
-    p.appendChild(a);
-  }
+  divListGroupItem.addEventListener("click", () =>
+    window.open(news.url, "_blank")
+  );
+  p.appendChild(a);
 
   divInner.append(h5, smallClass);
   divListGroupItem.appendChild(divInner);
@@ -67,35 +66,24 @@ function getDateByMs(ms) {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const year = date.getFullYear();
-  const hh = date.getHours();
+  let hh = date.getHours();
   const mm = date.getMinutes();
+
+  const ampm = hh >= 12 ? "PM" : "AM";
+  hh = hh % 12;
+  hh = hh === 0 ? 12 : hh;
 
   return `${month.toString().padStart(2, "0")}/${day
     .toString()
     .padStart(2, "0")}/${year} - ${hh.toString().padStart(2, "0")}:${mm
     .toString()
-    .padStart(2, "0")}`;
+    .padStart(2, "0")} ${ampm}`;
 }
 
-/* 
-<li>
-          <div class="list-group">
-            <div class="list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">
-                  E-4B “Doomsday Plane” Just Made Unusual Visit to Tonopah Test
-                  Range Airpor.
-                </h5>
-                <small class="text-body-secondary">3 days ago</small>
-              </div>
-              <p class="mb-1">
-                <a
-                  target="_blank"
-                  class="linkNews"
-                  href="https://www.thedrive.com/the-war-zone/41669/e-4b-doomsday-plane-just-made-highly-unusual-visit-to-secretive-tonopah-test-range-airport"
-                  >https://www.thedrive.com/the-war-zone/41669/e-4b-doomsday-plane-just-made-highly-unusual-visit-to-secretive-tonopah-test-range-airport</a
-                >
-              </p>
-            </div>
-          </div>
-        </li> */
+buttonLoadMore.addEventListener("click", async () => {
+  let newsmore = await api.showTenNews(IDS);
+
+  for (let news of newsmore) {
+    createItem(news);
+  }
+});
