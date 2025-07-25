@@ -67,10 +67,14 @@ function getDateByMs(ms) {
   const month = date.getMonth() + 1;
   const day = date.getDate();
   const year = date.getFullYear();
+  const hh = date.getHours();
+  const mm = date.getMinutes();
 
   return `${month.toString().padStart(2, "0")}/${day
     .toString()
-    .padStart(2, "0")}/${year}`;
+    .padStart(2, "0")}/${year} - ${hh.toString().padStart(2, "0")}:${mm
+    .toString()
+    .padStart(2, "0")}`;
 }
 
 /* 
