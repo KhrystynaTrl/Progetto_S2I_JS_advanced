@@ -1,13 +1,15 @@
 $mainTheme: rgb(0, 0, 0);
 $backgroundNews: rgba(0, 0, 0, 0.393);
 $buttonBorderStyle: solid, rgb(0, 0, 0), 1.5px;
+$buttonBgColor: rgba(255, 255, 255, 0.909);
+$h5Color: rgb(31, 31, 94);
+
 body {
   background-color: $mainTheme;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Times New Roman", Times, serif;
 
   #divHeader {
     width: 100%;
@@ -30,15 +32,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    #loadMoreButton {
+    #buttonLoadMore {
       margin-top: 10px;
       border: $buttonBorderStyle;
       font-weight: bold;
       border-radius: 7px;
       height: 55px;
       width: 160px;
-      font-size: 18px;
-      background-color: rgba(255, 255, 255, 0.909);
+      font-size: 20px;
+      background-color: $buttonBgColor;
     }
     ul {
       width: 80%;
@@ -46,7 +48,9 @@ body {
       li {
         list-style-type: none;
         h5 {
-          color: rgb(31, 31, 94);
+          font-weight: bold;
+          font-size: 23px;
+          color: $h5Color;
         }
         .text-body-secondary {
           background-color: white;

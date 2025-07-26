@@ -1,9 +1,27 @@
 require("./scss/index.scss");
 const api = require("./js/api.js");
+
 const IDS = [];
 const buttonLoadMore = document.getElementById("buttonLoadMore");
+
+buttonLoadMore.addEventListener("click", async () => {
+  let newsmore = await api.showTenNews(IDS);
+
+  for (let news of newsmore) {
+    createItem(news);
+  }
+});
+
+start();
+
 async function start() {
-  IDS.push(...(await api.getAllNews()));
+  let respAllNews = await api.getAllNews();
+  if (respAllNews == null) {
+    alert("Something wrong, try to refresh the page");
+    buttonLoadMore.disabled = true;
+    return;
+  }
+  IDS.push(...respAllNews);
 
   let tenNews = await api.showTenNews(IDS);
 
@@ -11,8 +29,6 @@ async function start() {
     createItem(news);
   }
 }
-
-start();
 
 function createItem(news) {
   const UL = document.getElementById("ulNews");
@@ -79,11 +95,3 @@ function getDateByMs(ms) {
     .toString()
     .padStart(2, "0")} ${ampm}`;
 }
-
-buttonLoadMore.addEventListener("click", async () => {
-  let newsmore = await api.showTenNews(IDS);
-
-  for (let news of newsmore) {
-    createItem(news);
-  }
-});
