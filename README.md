@@ -65,6 +65,7 @@ npm start
 Progetto realizzato da Khrystyna Terletska per il corso JavaScript Advanced.
 
 GitHub: @KhrystynaTrl
-Hosting_URL: [Link dell'applicazione](https://project-news-page.web.app)
-Project_Console: https://console.firebase.google.com/project/project-news-page/overview
 ```
+
+Hosting_URL: [Link dell'applicazione](https://project-news-page.web.app)
+Project_Console: [Link della console](https://console.firebase.google.com/project/project-news-page/overview)
