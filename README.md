@@ -1,6 +1,6 @@
 # News Feed – Progetto S2I JavaScript Advanced
 
-Un'applicazione web che mostra le ultime notizie pubblicate su [Hacker News](https://hacker-news.firebaseio.com/v0/), caricandole dinamicamente tramite API.
+Un'applicazione web che mostra le ultime notizie pubblicate su [Hacker News](https://github.com/HackerNews/API), caricandole dinamicamente tramite API.
 
 ## 📸 Screenshot
 
