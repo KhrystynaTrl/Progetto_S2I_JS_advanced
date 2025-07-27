@@ -22,7 +22,7 @@ async function getNews(id) {
     let news = await axios.get(new URL(`item/${id}.json`, BASEURL));
     if (news.status >= 400) {
       throw new Error(
-        `Chiamata con errore ${allNews.status} - ${allNews.statusText}`
+        `Chiamata con errore ${news.status} - ${news.statusText}`
       );
     }
     return news.data;
