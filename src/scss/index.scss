@@ -3,6 +3,7 @@ $backgroundNews: rgba(0, 0, 0, 0.393);
 $buttonBorderStyle: solid, rgb(0, 0, 0), 1.5px;
 $buttonBgColor: rgba(255, 255, 255, 0.909);
 $h5Color: rgb(31, 31, 94);
+$whiteColor: rgb(255, 255, 255);
 
 body {
   background-color: $mainTheme;
@@ -22,7 +23,7 @@ body {
     h1 {
       text-align: center;
       font-size: 50px;
-      color: rgb(255, 255, 255);
+      color: $whiteColor;
     }
   }
   main {
@@ -53,7 +54,7 @@ body {
           color: $h5Color;
         }
         .text-body-secondary {
-          background-color: white;
+          background-color: $whiteColor;
           color: black;
         }
 
@@ -65,7 +66,7 @@ body {
 
         .linkNews {
           text-decoration: none;
-          background-color: white;
+          background-color: $whiteColor;
           color: black;
           overflow-wrap: break-word;
         }
