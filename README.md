@@ -22,7 +22,7 @@ Un'applicazione web che mostra le ultime notizie pubblicate su [Hacker News](htt
 - **dotenv-webpack** per la gestione delle variabili `.env`
 
 ## 📁 Struttura del progetto
-
+```
 Progetto_S2I_JS_advanced/
 ├── resource/
 │ │ └── screenshot.png # screenshot della preview della pagina web
@@ -39,7 +39,7 @@ Progetto_S2I_JS_advanced/
 ├── package-lock.json # Lockfile delle dipendenze
 ├── README.md # Documentazione del progetto
 └── webpack.config.js # Configurazione del bundler Webpack
-
+```
 ## ⚙️ Installazione
 
 Assicurati di avere [Node.js](https://nodejs.org/) installato. Poi:
